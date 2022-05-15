@@ -17,7 +17,10 @@ public class Snail {
         int B = Integer.parseInt(st.nextToken());
         int V = Integer.parseInt(st.nextToken());
 
-        bw.write(String.valueOf((V-A) + 1));
+        int days = (V-A) / (A-B);
+        if((V - A) % (A-B) != 0)
+            days++;
+        bw.write(String.valueOf(days + 1));
         bw.flush();
         bw.close();
     }
